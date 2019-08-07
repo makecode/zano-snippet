@@ -1,0 +1,80 @@
+.button
+  padding: 2px
+  display: inline-block
+  width: 154px
+  height: 50px
+  line-height: 46px
+  border-radius: 10px
+  text-decoration: none
+  color: white
+  font-size: 13px
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 1px
+  cursor: pointer
+  background-image: linear-gradient(to right, $button-gradient-one, $button-gradient-two)
+  box-sizing: border-box
+  position: relative
+  border: none
+
+.button.blue
+  background-image: linear-gradient(to bottom, $button-gradient-one, $button-gradient-two)
+  border: none
+
+.button.small
+  width: 100px
+
+  .button-text
+    display: inline-block
+    padding-left: 10px
+    padding-right: 10px
+
+.button.blue::after
+  position: absolute
+  content: ''
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  border-radius: 10px
+  background-image: linear-gradient(to bottom, $button-gradient-two, $button-gradient-one)
+  transition: $tr
+  z-index: 0
+  opacity: 0
+
+.button.blue:hover::after
+  opacity: 1
+
+.button.blue .button-text
+  background-color: transparent
+
+.button .icon.download
+  margin-right: 8px
+
+.button .icon.button-triangle
+  margin-left: 8px
+
+.button span
+  z-index: 1
+
+.button a
+  color: inherit
+
+.button-text
+  display: block
+  text-align: center
+  border-radius: 10px
+  width: 100%
+  height: 100%
+  background-color: $bg-button
+  position: relative
+  z-index: 1
+  transition: $tr
+
+.button:hover .button-text
+  background-color: transparent
+
+.button.disabled
+  opacity: 0.2
+  pointer-events: none
+  user-select: none

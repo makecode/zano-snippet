@@ -1,0 +1,19 @@
+.social
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+
+  &__el
+    margin-left: 14px
+    transition: $tr
+
+  &__el:hover
+    transform: rotate(-15deg)
+
+  &__el:first-child
+    margin-left: 0
+
+  &__el,
+  &__link
+    line-height: 0

@@ -1,0 +1,119 @@
+.header
+  padding: 50px 20px
+
+  +m($tablet)
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    padding: 10px 20px
+    justify-content: center
+    background-color: rgba($bg-body, 0.9)
+    box-shadow: 10px 0 50px 0 rgba(0,0,0,0.75)
+    z-index: $z-header
+
+  .language
+    margin-right: 20px
+
+
+  &__wrap
+    position: relative
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: space-between
+    align-items: center
+
+  .navigation
+    height: auto
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    +m($tablet)
+      display: none
+
+  .social
+    +m($tablet)
+      display: none
+
+.footer
+  padding: 50px 0
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  text-align: center
+  height: 480px
+  background-image: linear-gradient(to bottom, $bg-footer-top, $bg-footer-bottom)
+
+.section
+  margin: 50px 0
+
+  // HERO
+  &.hero
+    text-align: center
+
+    .buttons
+      margin-top: 10px
+
+    .hero-button
+      margin: 0 10px
+
+    .hero-link
+      color: white
+
+  &.visualization
+    .titles
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+
+    .left
+      text-align: left
+
+    .right
+      text-align: right
+
+    .count
+      font-size: 20px
+
+    .periods
+      margin-top: 50px
+      display: flex
+      align-items: center
+      flex-direction: row
+      justify-content: space-between
+
+    .period
+
+      &__num
+        color: white
+
+      &.current
+        .period__data
+          color: $text-yellow
+      &.next
+        text-align: right
+
+        .period__data
+          color: $text-orange
+
+    .chart
+      margin-top: 40px
+
+      &__img
+        width: 100%
+
+  &.how
+    text-align: center
+
+    .section-right
+      margin-top: 30px
+
+  &.faq
+    text-align: center
+
+.container
+  width: $containerDesktop
+  margin: 0 auto

@@ -1,0 +1,24 @@
+.loader
+  display: inline-block
+  margin: 0 auto
+  width: 200px
+  position: relative
+  transition: all 0.2s ease-in-out
+
+
+.loader__img
+  display: inline-block
+  animation: loaderAnimation 5s infinite ease-in-out
+  opacity: 0.8
+
+.loader__text
+  text-align: center
+
+
+@keyframes loaderAnimation 
+  0%
+    opacity: 1
+  50%
+    opacity: 0.5
+  100%
+    opacity: 1
