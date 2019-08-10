@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _get from 'lodash.get';
 
 import Form from './Form';
 
-const FormWidget = ({ scheme }) => {
-  const showLogo = _get(scheme, 'LOGO.visible', true);
-
+const FormWidget = ({ scheme, showLogo, onFormClick }) => {
   const formProps = {
-    showLogo
+    showLogo,
+    scheme,
+    onClick: onFormClick
   };
 
   return (
     <div className='form-widget'>
-      <Form {...formProps} />
-      <Form {...formProps} />
+      <Form {...formProps} color='black' />
+      <Form {...formProps} color='white' />
     </div>
   );
 };

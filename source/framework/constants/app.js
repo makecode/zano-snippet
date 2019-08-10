@@ -1,4 +1,4 @@
-export const TOTAL_COINS = 13827203;
+export const KEY_LOGO_NAME = 'LOGO';
 
 export const MENU_ITEMS = [
   { title: 'Marketplace',    link: 'https://marketplace.zano.org'                   },

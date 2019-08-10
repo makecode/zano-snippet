@@ -9,6 +9,7 @@ export { default as SuperForm } from './containers/SuperForm';
 
 // UI Components
 export { default as Button } from './ui/Button/Button';
+export { default as InputFormatted } from './ui/InputFormatted/InputFormatted';
 export { default as Icon } from './ui/Icon/Icon';
 export { default as Logo } from './ui/Logo/Logo';
 export { default as Loader } from './ui/Loader/Loader';
@@ -19,5 +20,4 @@ export { default as Steps } from './ui/Steps/Steps';
 export { default as Title } from './ui/Title/Title';
 export { default as Configurator } from './ui/Configurator/Configurator';
 export { default as ConfiguratorRow } from './ui/Configurator/ConfiguratorRow';
-export { default as TextField } from './ui/TextField/TextField';
 export { default as FormWidget } from './ui/FormWidget/FormWidget';

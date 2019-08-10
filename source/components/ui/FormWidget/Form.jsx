@@ -1,38 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _get from 'lodash.get';
 
-import { Logo, Button } from '../../index';
+import { Logo, Button, InputFormatted } from '../../index';
+import { KEY_LOGO_NAME } from '../../../framework/constants/app';
 
-const FormRow = ({}) => {
-  return (
-    <div>
-      <span></span>
-      <span></span>
+const FormRow = ({ title, value, disabled, hidden }) => {
+  const inputProps = {
+    value,
+    disabled
+  };
+
+  return !hidden && (
+    <div className='form-row'>
+      <span className='form-row__title'>{title}</span>
+      <InputFormatted {...inputProps} />
     </div>
   );
 };
 
-const getForm = (scheme) => {
-  Object.keys(scheme).map(() => {
+const Form = ({ color, scheme, showLogo, onClick }) => (
+  <div className='form-item' onClick={() => onClick(color)}>
+    {showLogo && <Logo />}
 
-  });
+    {scheme.map((item, index) => {
+      const rowProps = {
+        name: item.name,
+        title: item.title,
+        value: item.value,
+        unit: item.unit,
+        type: item.type,
+        hidden: item.hidden,
+        disabled: item.locked
+      };
 
-  return (
-    <div>
-      
-    </div>
-  )
-}
+      return item.name !== KEY_LOGO_NAME && <FormRow {...rowProps} key={`form-row-${index}`} />;
+    })}
 
-const Form = ({ showLogo }) => {
-  return (
-    <div className='form-item'>
-      {showLogo && <Logo />}
-      <Button blue>Proceed to wallet</Button>
-    </div>
-  );
-};
+    <Button blue>Proceed to wallet</Button>
+  </div>
+);
 
 Form.propTypes = {
   showLogo: PropTypes.bool
