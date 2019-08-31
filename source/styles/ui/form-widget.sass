@@ -15,17 +15,29 @@
   display: flex
   flex-direction: column
   justify-content: flex-start
+  align-items: flex-start
   padding: 20px
   background-color: #1E3068
+  border: 4px solid transparent
   border-radius: 14px
   box-sizing: border-box
+  cursor: pointer
+
+  &.active
+    border-color: $button-gradient-one
+
+  &.white
+    background-color: white
+    
+    .form-row__title
+      color: black
 
   .button
     margin-top: 20px
     width: 100%
 
 .form-row
-  margin-bottom: 20px
+  margin: 10px 0
   width: 100%
   display: flex
   flex-direction: row
@@ -43,6 +55,13 @@
     color: white
 
   &__value
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
     width: 55%
     overflow: hidden
     text-overflow: ellipsis
+
+  &__unit
+    font-weight: bold

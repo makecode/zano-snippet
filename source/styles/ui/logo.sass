@@ -13,22 +13,23 @@
     transition: transform 1s ease-in-out
 
   &__text
-    display: block
+    display: inline-block
     margin-left: 14px
+    height: 100%
+    line-height: 1.6
     text-transform: uppercase
-    font-weight: 700
-    font-size: 12px
-    letter-spacing: 1px
-    color: $text-controls
 
     +m($tablet)
       display: none
 
-  &__world
+  &__word
     display: block
-    line-height: 1.6
+    font-size: 12px
+    font-weight: 700
+    letter-spacing: 1px
+    color: $text-controls
 
-  &__world:nth-child(2)
+  &__word:nth-child(2)
     color: #7cabee
 
 

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 import Form from './Form';
 
-const FormWidget = ({ scheme, showLogo, onFormClick }) => {
+const FormWidget = ({ activeColor, scheme, showLogo, onFormClick }) => {
   const formProps = {
+    activeColor,
     showLogo,
     scheme,
     onClick: onFormClick
@@ -19,11 +20,18 @@ const FormWidget = ({ scheme, showLogo, onFormClick }) => {
 };
 
 Form.propTypes = {
-  scheme: PropTypes.object
+  activeColor: PropTypes.oneOf([
+    'black', 'white'
+  ]),
+  scheme: PropTypes.object,
+  showLogo: PropTypes.bool,
+  onFormClick: PropTypes.func
 }
 
 Form.defaultProps = {
-  scheme: {}
+  scheme: {},
+  showLogo: true,
+  onFormClick: () => {}
 };
 
 export default FormWidget;
