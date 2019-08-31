@@ -1,0 +1,97 @@
+html,
+body
+  width: 100%
+  min-height: 100%
+  height: 100%
+
+body
+  min-width: 1180px
+  line-height: 1
+  color: $text-main
+  background-size: cover
+
+  +m($tablet)
+    padding-top: 70px
+
+h1, h2, h3, h4, h5, h6
+  display: inline-block
+  font-weight: bold
+
+h1,
+h2
+  margin: 56px 0 20px
+  font-size: 56px
+  line-height: 56px
+  font-weight: 300
+  color: white
+
+  +m($tablet)
+    font-size: 46px
+
+  +m($mobile)
+    font-size: 30px
+
+h3
+  margin: 20px 0
+  font-size: 18px
+  font-weight: 400
+  color: white
+p
+  margin: 4px 0
+  line-height: 2.5
+  letter-spacing: 0.7px
+  font-size: 15px
+
+// +m($tablet)
+//   line-height: 1.6
+
+a
+  display: inline-block
+  text-decoration: none
+
+ul
+  padding: 0
+  margin: 0
+  list-style: none
+
+img
+  display: inline-block
+  max-width: 100%
+
+*
+  box-sizing: border-box
+
+#root
+  width: 100%
+  min-height: 100%
+
+.App
+  min-height: 100vh
+  min-width: $container
+  display: flex
+  flex-direction: column
+  font-size: 16px
+  font-family: 'Roboto', sans-serif
+  background-image: url('../../media/images/header-bg.png')
+  background-color: $bg-body
+  background-position: top
+  background-size: contain
+  color: $text-main
+  font-weight: 400
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.loader-container
+  display: flex
+  align-items: center
+  flex: 1 0 0
+
+  .loader
+    position: relative
+    top: 30%
+
+.text-blue
+  color: $blue
+
+.copyright
+  font-size: 11px
