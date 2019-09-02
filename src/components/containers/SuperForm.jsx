@@ -1,10 +1,13 @@
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+
 import _get from 'lodash.get';
 
 // import {  } from 'react-scroll';
 
 import { Configurator, FormWidget } from '../index';
 import { KEY_LOGO_NAME } from '../../framework/constants/app';
+import prettifyHtml from 'prettify-html';
 
 const FORM_SCHEME = {
   YOUR_WALLET:    { title: 'Your wallet address', value: 'XXXXxxxxXXXXxxxxXXXXxxxxXXXXxxxxXXXXxxxxXXXX', unit: '',                      hidden: true,  locked: false, lockDisabled: true },
@@ -95,6 +98,16 @@ class SuperForm extends React.Component {
       <div className='super-form'>
         <Configurator {...configuratorProps} />
         <FormWidget {...formWidgetProps} />
+
+        <div className='raw-html'>
+          <pre>
+            <code>
+              {prettifyHtml(
+                ReactDOMServer.renderToStaticMarkup(<FormWidget {...formWidgetProps} />)
+              )}
+            </code>
+          </pre>
+        </div>
       </div>
     );
   }
