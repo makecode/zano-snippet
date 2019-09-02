@@ -8,7 +8,7 @@ const ConfiguratorRow = ({name, title, value, unit, type, hidden, locked, lockDi
     name,
     value,
     type,
-    suffix: unit,
+    unit,
     onChange: onInputChange
   }
 
@@ -28,9 +28,7 @@ const ConfiguratorRow = ({name, title, value, unit, type, hidden, locked, lockDi
   return (
     <div className='configurator-row'>
       <span className="configurator-row__title">{title}</span>
-      <div className='configurator-row__value'>
-        <InputFormatted {...inputProps} />
-      </div>
+      <InputFormatted {...inputProps} />
       <div className="configurator-row__controls">
         <Button {...buttonHiddenProps}>Hidden</Button>
         <Button {...buttonLockedProps}>Locked</Button>

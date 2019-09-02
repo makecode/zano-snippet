@@ -8,8 +8,8 @@ const Steps = ({ steps }) => {
   const [ visible, setVisible ] = useState(true);
   
   const renderButton = () => {
-    const word = visible ? 'Show' : 'Hide';
-    const symbol = visible ? '+' : '-';
+    const word = visible ? 'Hide' : 'Show';
+    const symbol = visible ? '-' : '+';
 
     return (
       <span className={classnames('steps__button', { filled: visible })} onClick={() => setVisible(!visible)}>

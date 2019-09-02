@@ -1,25 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 
-const InputFormatted = ({ name, value, unit, type, disabled, onChange }) => {
+import { formInputContainer, formInputField, formInputUnit } from './formStyles';
+
+const FormInput = ({ name, value, unit, type, disabled, onChange }) => {
   const inputProps = {
     name,
     value,
     type,
-    disabled,
     onChange: (event) => onChange(name, event.target.value)
   };
 
+  const inputStyles = Object.assign({}, formInputField, {
+    
+  });
+
   return (
-    <div className={classnames('formatted', { 'disabled': disabled })}>
-      <input className='formatted__input' {...inputProps} />
-      {unit && (<span className='formatted__unit'>{unit}</span>)}
+    <div style={formInputContainer}>
+      <input style={inputStyles} {...inputProps} disabled={disabled} />
+      {unit && (<span style={formInputUnit}>{unit}</span>)}
     </div>
   )
 };
 
-InputFormatted.propTypes = {
+FormInput.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   unit: PropTypes.string,
@@ -31,7 +35,7 @@ InputFormatted.propTypes = {
   onChange: PropTypes.func
 };
 
-InputFormatted.defaultProps = {
+FormInput.defaultProps = {
   name: '',
   value: '',
   unit: '',
@@ -40,4 +44,4 @@ InputFormatted.defaultProps = {
   onChange: () => {}
 };
 
-export default InputFormatted;
+export default FormInput;

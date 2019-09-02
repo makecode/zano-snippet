@@ -2,25 +2,13 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
 import _get from 'lodash.get';
-
+import prettifyHtml from 'prettify-html';
+import classnames from 'classnames';
 // import {  } from 'react-scroll';
 
-import { Configurator, FormWidget } from '../index';
+import { Configurator, FormsContainer, FormWidget } from '../index';
 import { KEY_LOGO_NAME } from '../../framework/constants/app';
-import prettifyHtml from 'prettify-html';
-
-const FORM_SCHEME = {
-  YOUR_WALLET:    { title: 'Your wallet address', value: 'XXXXxxxxXXXXxxxxXXXXxxxxXXXXxxxxXXXXxxxxXXXX', unit: '',                      hidden: true,  locked: false, lockDisabled: true },
-  YOUR_ID:        { title: 'Your payment ID',     value: '@test',                                        unit: '',                      hidden: true,  locked: false, lockDisabled: true },
-  AMOUNT:         { title: 'Amount',              value: '15',                                           unit: 'ZANO', type: 'number',  hidden: false, locked: true,  lockDisabled: false },
-  DESCRIPTION:    { title: 'Description',         value: 'RX 580 (ITM: 67214)',                          unit: '',                      hidden: false, locked: true, lockDisabled: false },
-  COMMENT:        { title: 'Comment',             value: '',                                             unit: '',                      hidden: false, locked: false,  lockDisabled: false },
-  YOUR_DEPOSIT:   { title: 'Your deposit',        value: '5',                                            unit: 'ZANO',  type: 'number', hidden: false, locked: true,  lockDisabled: false },
-  BAYER_DEPOSIT:  { title: 'Bayer deposit',       value: '15',                                           unit: 'ZANO',  type: 'number', hidden: false, locked: true,  lockDisabled: false },
-  FEE:            { title: 'Fee',                 value: '0.01',                                         unit: 'ZANO',  type: 'number', hidden: true,  locked: false, lockDisabled: true },
-  RESPONSE_TIME:  { title: 'You response time',   value: '12',                                           unit: 'hours', type: 'number', hidden: true,  locked: false, lockDisabled: true },
-  LOGO:           { title: 'ZANO logo',           visible: true }
-}
+import { FORM_SCHEME } from '../../framework/constants/form';
 
 class SuperForm extends React.Component {
   constructor(props) {
@@ -28,7 +16,8 @@ class SuperForm extends React.Component {
 
     this.state = {
       form: FORM_SCHEME,
-      formColor: 'black'
+      formColor: 'black',
+      show: true
     };
   }
 
@@ -49,7 +38,7 @@ class SuperForm extends React.Component {
   onLockedClick = (name) => {
     const { form } = this.state;
     form[name].locked = !form[name].locked
-
+    debugger;
     this.setState(() => ({
       form
     }));
@@ -68,7 +57,21 @@ class SuperForm extends React.Component {
     formColor: color
   }));
 
+  renderButton = () => {
+    const { show } = this.state;
+    const word = show ? 'Hide' : 'Show';
+    const symbol = show ? '-' : '+';
+
+    return (
+      <span className={classnames('show-button', { filled: show })} onClick={() => this.setState(() => ({ show: !show }))}>
+        {`${word} widget code ${symbol}`}
+      </span>
+    );
+  };
+
   render() {
+    const { show } = this.state;
+
     const transformedScheme = Object.keys(FORM_SCHEME).map((key) => ({
       name: key,
       title: _get(FORM_SCHEME[key], 'title', ''),
@@ -80,6 +83,8 @@ class SuperForm extends React.Component {
       lockDisabled: _get(FORM_SCHEME[key], 'lockDisabled', true),
     }));
 
+    const showLogo = _get(FORM_SCHEME[KEY_LOGO_NAME], 'visible', true);
+
     const configuratorProps = {
       scheme: transformedScheme,
       onHiddenClick: this.onHiddenClick,
@@ -88,25 +93,38 @@ class SuperForm extends React.Component {
     };
 
     const formWidgetProps = {
+      showLogo,
       activeColor: this.state.formColor,
       onFormClick: this.onFormClick,
-      showLogo: _get(FORM_SCHEME[KEY_LOGO_NAME], 'visible', true),
       scheme: transformedScheme
+    };
+
+    const formProps = {
+      showLogo,
+      scheme: transformedScheme,
+      color: this.state.formColor
+    };
+
+    const textAreaProps = {
+      className: 'raw-html-input',
+      name: 'raw-html-input',
+      id: 'raw-html-input',
+      rows: '10',
+      value: prettifyHtml(ReactDOMServer.renderToStaticMarkup(<FormWidget {...formProps} />)),
+      onClick: (e) => e.target.select(),
+      onChange: () => {}
     };
 
     return (
       <div className='super-form'>
         <Configurator {...configuratorProps} />
-        <FormWidget {...formWidgetProps} />
+        <FormsContainer {...formWidgetProps} />
 
-        <div className='raw-html'>
-          <pre>
-            <code>
-              {prettifyHtml(
-                ReactDOMServer.renderToStaticMarkup(<FormWidget {...formWidgetProps} />)
-              )}
-            </code>
-          </pre>
+        <div className='raw-html container'>
+          <div className='super-form-controls'>
+            {this.renderButton()}
+          </div>
+          {show && (<textarea {...textAreaProps} />)}
         </div>
       </div>
     );

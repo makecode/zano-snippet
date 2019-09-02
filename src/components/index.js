@@ -20,4 +20,5 @@ export { default as Steps } from './ui/Steps/Steps';
 export { default as Title } from './ui/Title/Title';
 export { default as Configurator } from './ui/Configurator/Configurator';
 export { default as ConfiguratorRow } from './ui/Configurator/ConfiguratorRow';
+export { default as FormsContainer } from './ui/FormWidget/FormsContainer';
 export { default as FormWidget } from './ui/FormWidget/FormWidget';
