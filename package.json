@@ -1,7 +1,7 @@
 {
   "name": "zano-snippet",
+  "homepage" : "http://makecode.github.io/zano-snippet",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
     "lodash.get": "^4.4.2",
