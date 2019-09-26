@@ -89,7 +89,7 @@ export const t = {
       }
     ],
     "titleShadow": "Snippets",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloribus, repellendus facere animi illo necessitatibus incidunt ad molestiae blanditiis iste hic nobis. Eligendi magni laborum ab beatae illum, minus sit velit consectetur cumque nam nesciunt dolores vero commodi error fuga totam ratione itaque ad autem. Officiis aspernatur distinctio id dolorum corporis doloremque impedit sed, laboriosam iure! Magnam vitae sequi ipsum quidem vero illo corporis ab dicta, aut consequatur, totam doloremque nisi, perspiciatis alias, asperiores voluptatem illum consectetur aliquid.",
+    "description": "Zano contracts mechanism was designed to facilitate secure, anonymous payments from your customers. Contract snippets offer a simplified way to arrange a deal. As a seller of services or items, you can publish a snippet on your website with predefined contract details. When applied by a potential buyer, the contract will be generated in the Zano app ready to start.",
     "buttonOne": "Main website",
     "buttonOneLink": "https://zano.org",
     "buttonTwo": "User guide",
@@ -100,20 +100,20 @@ export const t = {
       {
         "icon": "step-one",
         "title": "Step 1",
-        "subtitle": "Lorem ipsum dolor",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloribus, repellendus facere animi illo necessitatibus incidunt ad molestiae blanditiis iste hic nobis. "
+        "subtitle": "Create Contract Template",
+        "description": "Customise your contract proposal using the web form. You can hide, lock, and predefine any field to make your contract snippet suite best to your offer."
       },
       {
         "icon": "step-two",
         "title": "Step 2",
-        "subtitle": "Lorem ipsum dolor",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloribus, repellendus facere animi illo necessitatibus incidunt ad molestiae blanditiis iste hic nobis. "
+        "subtitle": "Publish Contract Snippet",
+        "description": "Choose between dark or light color scheme and copy your contract snippet HTML to your webpage. A snippet can be as minimalistic as one button or contain editable fields."
       },
       {
         "icon": "step-three",
         "title": "Step 3",
-        "subtitle": "Lorem ipsum dolor",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloribus, repellendus facere animi illo necessitatibus incidunt ad molestiae blanditiis iste hic nobis. "
+        "subtitle": "Receive Contract Proposals",
+        "description": "When a user clicks on your contract snippet the Zano app will open for him and a predefined contract proposal will be ready for him to send, avoiding mistypes."
       }
     ]
   }
