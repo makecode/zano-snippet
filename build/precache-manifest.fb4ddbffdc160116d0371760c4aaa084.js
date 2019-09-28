@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c262193bd208b12239f43c7c28cd268c",
+    "revision": "dce1880a0c90a72ed14414f73667ba42",
     "url": "/zano-snippet/index.html"
   },
   {

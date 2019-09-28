@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/zano-snippet/precache-manifest.12c40382e0ebc9bced7d2a7b31693e4c.js"
+  "/zano-snippet/precache-manifest.fb4ddbffdc160116d0371760c4aaa084.js"
 );
 
 self.addEventListener('message', (event) => {
