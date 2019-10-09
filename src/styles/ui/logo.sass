@@ -15,25 +15,24 @@
     transition: transform 1s ease-in-out
 
   &__text
-    display: inline-block
+    display: block
     margin-left: 14px
-    height: 100%
-    line-height: 1.6
     text-transform: uppercase
+    text-align: left
+    font-weight: 700
+    font-size: 12px
+    letter-spacing: 1px
+    color: $text-controls
 
     +m($tablet)
       display: none
 
-  &__word
+  &__world
     display: block
-    font-size: 12px
-    font-weight: 700
-    letter-spacing: 1px
-    color: $text-controls
+    line-height: 1.6
 
-  &__word:nth-child(2)
+  &__world:last-child
     color: #7cabee
-
 
 .logo:hover .logo__image
   transform: rotateY(180deg)

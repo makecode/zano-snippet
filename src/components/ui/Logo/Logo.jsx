@@ -4,11 +4,12 @@ const Logo = () => {
   return (
     <a className='logo' href="https://zano.org/" target='_self'>
       <span className='logo__image'/>
-      <span className='logo__text'>
-        <span className='logo__word'>Zano</span>
-      </span>
+      <p className='logo__text'>
+        <span className='logo__world'>Zano</span>
+        <span className='logo__world'>Snippet</span>
+      </p>
     </a>
-  );  
+  );
 };
 
 export default Logo;
