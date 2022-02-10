@@ -4,7 +4,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "lodash.get": "^4.4.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "node-static": "^0.7.11",
     "prettify-html": "^0.0.2",
     "prop-types": "^15.7.2",
